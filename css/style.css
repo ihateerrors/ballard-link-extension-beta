@@ -145,6 +145,9 @@ h3 {
 
   margin: auto;
 }
+.purplebg {
+  background: #002e6d;
+}
 
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
