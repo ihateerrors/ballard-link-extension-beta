@@ -112,8 +112,31 @@ window.addEventListener("scroll", function() {
 
 
 
-// ----- Tooltip ----- 
+// ==== Tooltip ==== 
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 })
+
+
+// === Resource library ===
+const openAcc = (acc) => {
+  // When the <a> tag is clicked it will scroll down,
+  // to the anchor. Then after 1sec the accordion opens.
+  setTimeout(() => {
+    const accBtn = document.getElementById(`${acc}`);
+    const panel = accBtn.nextElementSibling;
+    accBtn.classList.add("active");
+    panel.style.display = "block";
+  }, 1000);
+};
+
+// List of all anchor tags within the topics accordion
+const topicsList = document.querySelectorAll('ol.topics-list li a');
+// Adds event listener to each anchor
+topicsList.forEach(link => link.addEventListener('click', ()=> {
+  // Grabs the href value from each anchor and removes the '#'
+  const accID = link.hash.split('').splice(1).join('');
+
+  openAcc(accID);
+}))
