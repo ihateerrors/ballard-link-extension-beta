@@ -140,3 +140,22 @@ topicsList.forEach(link => link.addEventListener('click', ()=> {
 
   openAcc(accID);
 }))
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const filterInput = document.getElementById("filterInput");
+  const itemList = document.querySelectorAll("#itemList button");
+
+  filterInput.addEventListener("input", filterItems);
+
+  function filterItems() {
+      const filterValue = filterInput.value.toLowerCase();
+
+      itemList.forEach(function (item) {
+          const text = item.textContent.toLowerCase();
+          item.style.display = text.includes(filterValue) ? "block" : "none";
+      });
+  }
+});
