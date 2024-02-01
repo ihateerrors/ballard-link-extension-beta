@@ -634,9 +634,6 @@ article.widget-translate {
 .widget-translate .html-widget-body a {
   color: #fff;
 }
-article.widget-translate:nth-child(2) {
-  float: right;
-}
 article.widget-translate {
   display: inline-block;
 }
